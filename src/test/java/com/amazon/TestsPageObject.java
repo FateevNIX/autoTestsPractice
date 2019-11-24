@@ -53,8 +53,8 @@ public class TestsPageObject {
         homePageObj.clickSubmitButton();
         searchResultsPageObj.checkTitle(keyword);
         searchResultsPageObj.checkThatTitlesContainsKeyword(keyword);
-        String firstProductName = searchResultsPageObj.getFirstProductName(driver);
-        String firstProductPrice = searchResultsPageObj.getFirstProductPrice(driver);
+        String firstProductName = searchResultsPageObj.getFirstProductName();
+        String firstProductPrice = searchResultsPageObj.getFirstProductPrice();
         searchResultsPageObj.clickOnFirstProduct();
         productDetailsPageObj.clickOnAddToCartButton();
         preShoppingCartPageObj.clickOnCartButton();

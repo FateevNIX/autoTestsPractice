@@ -14,18 +14,12 @@ public class ShoppingCartPage {
         this.driver = driver;
     }
 
-    public static String getProductName(WebDriver driver) {
-        String productName = driver.findElement(nameOfProductInTheCart).getText();
-        return productName;
-    }
+    public String getProductName() { return driver.findElement(nameOfProductInTheCart).getText(); }
 
-    public static String getProductPrice(WebDriver driver) {
-        String productPrice = driver.findElement(priceOfProductInTheCart).getText();
-        return productPrice;
-    }
+    public String getProductPrice() { return driver.findElement(priceOfProductInTheCart).getText(); }
 
     public void checkThatNameAndPriceAreTheSameAsOnSearchResultsPage(String firstProductName, String firstProductPrice) {
-        Assert.assertEquals(getProductName(driver), firstProductName);
-        Assert.assertEquals(getProductPrice(driver), firstProductPrice);
+        Assert.assertEquals(getProductName(), firstProductName);
+        Assert.assertEquals(getProductPrice(), firstProductPrice);
     }
 }

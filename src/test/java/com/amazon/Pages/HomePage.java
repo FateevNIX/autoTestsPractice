@@ -14,9 +14,7 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public void goToHomePage(){
-        driver.get("https://www.amazon.com/");
-    }
+    public void goToHomePage(){ driver.get("https://www.amazon.com/");    }
 
     public void selectBabyCategoryInSearchTextbox(){
         driver.findElement(babyCategoryInSearchTextbox).click();
@@ -26,9 +24,7 @@ public class HomePage {
         driver.findElement(textboxSearch).sendKeys(text);
    }
 
-    public void clickSubmitButton(){
-        driver.findElement(submitButton).click();
-    }
+    public void clickSubmitButton(){ driver.findElement(submitButton).click(); }
 
 
 }

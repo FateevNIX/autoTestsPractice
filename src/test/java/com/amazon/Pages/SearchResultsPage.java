@@ -18,16 +18,13 @@ public class SearchResultsPage {
         this.driver = driver;
     }
 
-    public static String getTitleOnPage(WebDriver driver) {
-        String title = driver.getTitle();
-        return title;
-    }
+    public String getTitleOnPage() { return driver.getTitle(); }
 
     public void checkTitle(String keyword) {
-        Assert.assertTrue(getTitleOnPage(driver).contains(keyword));
+        Assert.assertTrue(getTitleOnPage().contains(keyword));
     }
 
-    public static List<String> getTitlesOfProducts(WebDriver driver) {
+    public List<String> getTitlesOfProducts() {
         List<WebElement> resultList = driver.findElements(listOfSearchResults);
         List<String> titlesOfProducts = new ArrayList<String>();
         for (WebElement resultItem : resultList) {
@@ -38,7 +35,7 @@ public class SearchResultsPage {
     }
 
     public void checkThatTitlesContainsKeyword(String keyword) {
-        List<String> titlesOfProducts = getTitlesOfProducts(driver);
+        List<String> titlesOfProducts = getTitlesOfProducts();
         try {
             for (int i = 0; i < titlesOfProducts.size(); i++) {
                 System.out.println(titlesOfProducts.get(i)); //эта часть для наглядности того, что в названии действительно отсутствовало ключевое слово
@@ -50,23 +47,16 @@ public class SearchResultsPage {
         }
     }
 
-    public static WebElement getFirstProductInSearchResultsList(WebDriver driver){
-        WebElement firstProductInList = driver.findElement(firstProductOnThePage);
-        return firstProductInList;
+    public WebElement getFirstProductInSearchResultsList(){
+        return driver.findElement(firstProductOnThePage);
     }
 
-    public static String getFirstProductName(WebDriver driver){
-        String productName = getFirstProductInSearchResultsList(driver).getText();
-        return productName;
-    }
+    public String getFirstProductName(){ return getFirstProductInSearchResultsList().getText(); }
 
-    public static String getFirstProductPrice(WebDriver driver){
-        String productPrice = driver.findElement(priceOfFirstProduct).getAttribute("innerText");
-        return productPrice;
-    }
+    public String getFirstProductPrice(){ return driver.findElement(priceOfFirstProduct).getAttribute("innerText"); }
 
     public void clickOnFirstProduct(){
-        getFirstProductInSearchResultsList(driver).click();
+        getFirstProductInSearchResultsList().click();
     }
 
 
