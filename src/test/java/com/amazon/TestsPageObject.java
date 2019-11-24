@@ -22,13 +22,13 @@ public class TestsPageObject {
 
     @Parameterized.Parameters
     public static Collection<Object> Keywords(){
-        Object[] object = new Object[]{"puzzle", "sock", "robe"};
+        Object[] object = new Object[]{"puzzle", "sock","robe"};
         return Arrays.asList(object);
     }
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Automation\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\fateev\\IdeaProjects\\ChromeDriver\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
